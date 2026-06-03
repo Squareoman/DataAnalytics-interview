@@ -4,13 +4,6 @@ from bs4 import BeautifulSoup
 
 
 def decode_secret_message(url: str) -> None:
-    """
-    Fetches a Google Doc containing a table of (x, character, y) entries,
-    reconstructs the 2D character grid, and prints it.
-
-    The grid origin (0, 0) is the bottom-left corner; x increases rightward,
-    y increases upwards.
-    """
     # Normalise the URL so we always hit the published HTML endpoint.
     # Published docs use /d/e/LONG_ID/pub; regular docs use /d/SHORT_ID/edit|view.
     if url.rstrip("/").endswith("/pub"):
